@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import MainParagraph from "../components/MainParagraph.astro";
+import HowWeWork from "../components/HowWeWork.astro";
 ---
 
 <Layout title="AstroMars">
@@ -10,9 +11,13 @@ import MainParagraph from "../components/MainParagraph.astro";
 		subtitle="первые на рынке космического строительства новых городов"
 		description="Наша компания поможет вам осуществить заветную мечту - сойти с планеты Земля и покорить Марс."
 	/>
+	<HowWeWork />
 </Layout>
 
 <style>
+	body {
+		overflow-x: hidden;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;
@@ -32,27 +37,3 @@ import MainParagraph from "../components/MainParagraph.astro";
 		z-index: -1;
 	}
 </style>
-
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-			return localStorage.getItem("theme");
-		}
-		return window.matchMedia("(prefers-color-scheme: dark)").matches
-			? "dark"
-			: "light";
-	};
-	const isDark = getThemePreference() === "dark";
-	document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-	if (typeof localStorage !== "undefined") {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains("dark");
-			localStorage.setItem("theme", isDark ? "dark" : "light");
-		});
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ["class"],
-		});
-	}
-</script>

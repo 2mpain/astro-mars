@@ -8,8 +8,8 @@ interface DeviceProps {
 const Device = ({ bgImage, image, bgCn, cn }: DeviceProps) => {
     return (
 		<div className="hidden lg:block">
-			<img src={bgImage} className={bgCn} />
-			<img loading="lazy" src={image} className={cn} />
+			<img src={bgImage} className={`${bgCn} overflow-hidden`} />
+			<img loading="lazy" src={image} className={`${cn} overflow-hidden`} />
 		</div>
 	);
 }
