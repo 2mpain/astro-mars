@@ -1,0 +1,24 @@
+---
+import { Typography } from "./react/Typography";
+
+interface Props {
+	title: string;
+	subtitle: string;
+	width?: string;
+}
+
+const { title, subtitle, width = "2/3" } = Astro.props;
+---
+
+<div class="flex flex-col items-center z-10">
+	<Typography
+		variant="h1"
+		className="text-white uppercase text-center font-regular"
+		>{title}</Typography
+	>
+	<Typography
+		variant="h2"
+		className=`mt-8 font-light text-gray w-${width} text-center`
+		>{subtitle}</Typography
+	>
+</div>

@@ -1,0 +1,87 @@
+---
+import Title from "./Title.astro";
+import { Typography } from "./react/Typography";
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+}
+
+const {
+	title = "Наши преимущества",
+	subtitle = "Dolore quis laborum reprehenderit sunt commodo cupidatat et in proident dolor. Id cupidatat duis in incididunt in tempor aliqua eiusmod non deserunt duis.",
+} = Astro.props;
+
+const advantages = [
+	{
+		id: 1,
+		title: "Всегда на связи",
+		image: "/Mars.png",
+		cn: "w-48 h-48",
+	},
+	{
+		id: 2,
+		title: "Постоянные бонусы и акции",
+		image: "/Intersect.png",
+		class: "w-36 h-36",
+	},
+	{
+		id: 3,
+		title: "Полный пакет услуг",
+		image: "/Uranus.png",
+		class: "w-48 h-48",
+	},
+];
+---
+
+<section class="w-screen h-screen bg-space">
+	<div class="z-0">
+		<img loading="lazy" src="/small comet.png" class="z-0 self-end absolute" />
+		<img loading="lazy" src="/comet.png" class="z-0 self-end absolute" />
+		<img
+			loading="lazy"
+			src="/long comet.png"
+			class="z-0 -left-48 absolute mt-24"
+		/>
+		<img
+			loading="lazy"
+			src="/long comet.png"
+			class="z-0 right-12 absolute mt-32"
+		/>
+		<img loading="lazy" src="/medium comet.png" class="z-0 right-12 absolute" />
+	</div>
+
+	<div class="flex justify-center items-end h-1/3">
+		<Title title={title} subtitle={subtitle} />
+	</div>
+
+	<div class="mt-32">
+		<ul
+			class="z-10 flex flex-col md:flex-row gap-16 items-center justify-center"
+		>
+			{
+				advantages.map((advantage) => (
+					<li class="z-10">
+						<div class="flex flex-col justify-between items-center rounded-2xl bg-slate h-[320px] w-[435px] py-4">
+							<Typography
+								variant="h2"
+								className="w-2/3 mt-8 text-center text-white font-regular"
+							>
+								{advantage.title}
+							</Typography>
+
+							<img
+								loading="lazy"
+								src={advantage.image}
+								class={advantage.class}
+								alt="planet image"
+							/>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>
+
+<style></style>
