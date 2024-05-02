@@ -1,0 +1,46 @@
+---
+interface Props {
+	title: string;
+	subtitle: string;
+	description: string;
+}
+
+const { title, subtitle, description } = Astro.props;
+---
+
+<div
+	class="flex overflow-hidden flex-row items-end pt-20 w-full font-light text-white max-md:max-w-full min-h-screen"
+>
+	<div
+		class="z-20 flex flex-col max-md:mt-10 max-md:max-w-full max-md:text-4xl self-start items-start ml-18 px-20"
+	>
+		<p class="z-20 flex mt-48 text-7xl font-black uppercase">
+			{title}
+		</p>
+		<p class="mt-12 text-5xl w-8/12 leading-snug uppercase">
+			{subtitle}
+		</p>
+		<p class="mt-10 text-2xl w-2/4 text-white">
+			{description}
+		</p>
+		<button
+			class="btn mt-20 bg-white text-black hover:bg-black hover:text-white transition-colors rounded-full px-40 py-2 w-1/5 justify-center flex text-4xl shadow-black shadow-md font-normal"
+			>Подробнее</button
+		>
+	</div>
+
+	<img
+		loading="lazy"
+		src="/Ellipse 2.png"
+		class="absolute inset-1 lg:size-auto md:size-auto sm:size-4/5 z-10"
+	/>
+	<img
+		loading="lazy"
+		src="/Ellipse 1.png"
+		class="absolute inset-1 lg:size-auto md:size-auto sm:size-4/5"
+	/>
+
+	<div class="flex justify-center items-center h-screen">
+		<img loading="lazy" src="/iphone empty.png" class="" />
+	</div>
+</div>
