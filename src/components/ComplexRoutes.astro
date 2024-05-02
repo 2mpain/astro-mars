@@ -1,0 +1,30 @@
+---
+import Title from "./Title.astro";
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+}
+
+const {
+	title = "Комплексные маршруты",
+	subtitle = "Для больших любителей покорять новые планеты наша компания придумала специальные комплексные маршруты. Вы можете выбрать сразу несколько планет, что позволит вам получить специальные бонусы и скидки.",
+} = Astro.props;
+---
+
+<section class="w-screen min-h-screen">
+	<div class="flex flex-row gap-x-32 *:justify-center h-screen/2 items-center">
+		<div class="w-full">
+			<img src="/Presents.png" class="relative top-36 left-16 self-center" />
+			<img
+				src="/Sales.png"
+				class="relative self-end left-2/3 top-16 w-auto h-auto"
+			/>
+			<img src="/Routes.png" class="relative self-center w-auto h-auto" />
+		</div>
+
+		<div class="px-4 self-center">
+			<Title title={title} subtitle={subtitle} align="start" width="1/4" />
+		</div>
+	</div>
+</section>

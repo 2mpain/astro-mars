@@ -3,12 +3,16 @@ import { Typography } from "./react/Typography";
 import Device from "./react/Device";
 
 interface Props {
-	title: string;
-	subtitle: string;
-	description: string;
+	title?: string;
+	subtitle?: string;
+	description?: string;
 }
 
-const { title, subtitle, description } = Astro.props;
+const {
+	title = "Колонизация Марса",
+	subtitle = "первые на рынке космического строительства новых городов",
+	description = "Наша компания поможет вам осуществить заветную мечту - сойти с планеты Земля и покорить Марс.",
+} = Astro.props;
 
 const laptop = {
 	bgImage: "/laptop image.png",
