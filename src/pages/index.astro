@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import MainParagraph from "../components/MainParagraph.astro";
+import HowWeWork from "../components/HowWeWork.astro";
 ---
 
 <Layout title="AstroMars">
@@ -10,9 +11,13 @@ import MainParagraph from "../components/MainParagraph.astro";
 		subtitle="первые на рынке космического строительства новых городов"
 		description="Наша компания поможет вам осуществить заветную мечту - сойти с планеты Земля и покорить Марс."
 	/>
+	<HowWeWork />
 </Layout>
 
 <style>
+	body {
+		overflow-x: hidden;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;

@@ -4,8 +4,12 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				'main': '#1C242F',
 				'darkPurple': '#1E005C',
-				'lightPurple': '#9700BD'
+				'lightPurple': '#9700BD',
+				'gray': '#D7D7D7',
+				'darkGray': '#50565F',
+				'pink': '#D6395D'		
 			}
 		},
 	},
