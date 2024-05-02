@@ -1,4 +1,7 @@
 ---
+import { Typography } from "./react/Typography";
+import Device from "./react/Device";
+
 interface Props {
 	title: string;
 	subtitle: string;
@@ -6,25 +9,42 @@ interface Props {
 }
 
 const { title, subtitle, description } = Astro.props;
+
+const laptop = {
+	bgImage: "/laptop image.png",
+	image: "/laptop.png",
+	bgCn: "absolute z-10 -right-44 bottom-32 h-full/2 mb-16 mr-32 lg:bottom-32 lg:-right-28 object-fit",
+	cn: "absolute z-20 -right-16 bottom-16 h-full/2 lg:bottom-32 lg:right-0",
+};
+
+const iphone = {
+	bgImage: "/iphone image.png",
+	image: "/iphone empty.png",
+	bgCn: "absolute self-end z-20 right-4 bottom-32 object-fit",
+	cn: "absolute self-end z-30 right-0 sm:bottom-24",
+};
 ---
 
 <div
 	class="flex overflow-hidden flex-row items-end pt-20 w-full font-light text-white max-md:max-w-full min-h-screen"
 >
 	<div
-		class="z-20 flex flex-col max-md:mt-10 max-md:max-w-full max-md:text-4xl self-start items-start ml-18 px-20"
+		class="z-20 flex flex-col max-md:mt-10 max-md:max-w-full max-md:text-4xl self-start items-start ml-18 px-36"
 	>
-		<p class="z-20 flex mt-48 text-7xl font-black uppercase">
-			{title}
-		</p>
-		<p class="mt-12 text-5xl w-8/12 leading-snug uppercase">
-			{subtitle}
-		</p>
-		<p class="mt-10 text-2xl text-white max-w-prose">
-			{description}
-		</p>
+		<Typography variant="h1" className="uppercase font-black mt-48"
+			>{title}</Typography
+		>
+		<Typography
+			variant="h1"
+			className="uppercase mt-10 leading-snug w-3/4 font-light"
+			>{subtitle}</Typography
+		>
+
+		<Typography variant="h3" className="mt-10 max-w-prose"
+			>{description}</Typography
+		>
 		<button
-			class="btn mt-20 bg-white text-black hover:bg-black hover:text-white transition-colors rounded-full px-40 py-2 w-1/5 justify-center flex text-4xl shadow-black shadow-md font-normal"
+			class="btn mt-20 bg-white text-black hover:bg-black hover:text-white hover:shadow-inner transition-colors rounded-full px-40 py-2 w-1/5 justify-center flex text-4xl shadow-black shadow-md font-normal"
 			>Подробнее</button
 		>
 	</div>
@@ -32,44 +52,14 @@ const { title, subtitle, description } = Astro.props;
 	<img
 		loading="lazy"
 		src="/Ellipse 2.png"
-		class="absolute inset-1 lg:size-auto md:size-auto sm:size-4/5 z-10"
+		class="absolute inset-1 lg:size-auto md:size-auto sm:size-screen z-10"
 	/>
 	<img
 		loading="lazy"
 		src="/Ellipse 1.png"
-		class="absolute inset-1 lg:size-auto md:size-auto sm:size-4/5"
+		class="absolute inset-1 lg:size-auto md:size-auto sm:size-screen"
 	/>
 
-	<div class="z-30">
-		<img
-			src="/laptop image.png"
-			class="absolute z-10 -right-44 bottom-32 h-full/2 mb-16 mr-32 lg:bottom-32 lg:-right-28"
-		/>
-		<img
-			loading="lazy"
-			src="/laptop.png"
-			class="absolute z-20 -right-16 bottom-16 h-full/2 lg:bottom-32 lg:right-0"
-		/>
-	</div>
-
-	<div class="flex z-40 justify-start max-h-full mb-24">
-		<img
-			loading="lazy"
-			src="/iphone empty.png"
-			class="absolute self-end z-30 right-0"
-		/>
-		<img
-			loading="lazy"
-			src="/iphone empty.png"
-			class="absolute self-end z-30 right-0"
-		/>
-	</div>
+	<Device {...laptop} />
+	<Device {...iphone} />
 </div>
-
-<style>
-	.laptop-wrap {
-		background-image: url("/Ellipse 1.png");
-		background-size: cover;
-		background-position: center;
-	}
-</style>
