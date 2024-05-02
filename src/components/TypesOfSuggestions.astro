@@ -1,0 +1,18 @@
+---
+import Title from "./Title.astro";
+import Table from "./Table.astro";
+import { manifest } from "astro:ssr-manifest";
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+}
+
+const { title = "три типа предложений", subtitle = "" } = Astro.props;
+---
+
+<section class="w-full min-h-screen">
+	<Title title={title} subtitle={subtitle} />
+
+	<Table />
+</section>

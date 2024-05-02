@@ -3,7 +3,7 @@ import { Typography } from "./react/Typography";
 
 interface Props {
 	title: string;
-	subtitle: string;
+	subtitle?: string;
 	width?: string;
 	align?: "start" | "center" | "end";
 }
@@ -17,9 +17,14 @@ const { title, subtitle, width = "2/3", align = "center" } = Astro.props;
 		className=`text-white uppercase text-${align} font-regular`
 		>{title}</Typography
 	>
-	<Typography
-		variant="h2"
-		className=`mt-8 font-light text-gray w-${width} text-${align}`
-		>{subtitle}</Typography
-	>
+	{subtitle && (
+		<Typography
+			variant="h2"
+			className=`mt-8 font-light text-gray w-${width} text-${align}`
+		>
+			{subtitle}
+		</Typography>
+		)
+	}
+	
 </div>
