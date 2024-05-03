@@ -1,0 +1,39 @@
+---
+import Title from "../ui/Title.astro";
+import Form from "../ui/Form.astro";
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+	bgImage?: string;
+	footerImage?: string;
+}
+
+const {
+	title = "остались вопросы?",
+	subtitle = "Заполните форму обратной свзяи и наш оператор свяжется с вами в течении пары часов",
+	bgImage = "/astronaut gradient.png",
+	footerImage = "/Moon footer.png",
+} = Astro.props;
+---
+
+<section class="w-screen h-screen bg-black relative">
+	<div class="flex justify-center items-end h-1/4">
+		<Title title={title} subtitle={subtitle} />
+	</div>
+
+	<div class="flex flex-row justify-center m-24">
+		<Form />
+		<img
+			src={bgImage}
+			alt="astronaut image"
+			class="absolute z-0 top-0 right-0 w-1/2 opacity-10"
+		/>
+	</div>
+
+	<img
+		src={footerImage}
+		alt="moon image"
+		class="absolute bottom-0 w-full z-10"
+	/>
+</section>

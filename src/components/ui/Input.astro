@@ -1,0 +1,27 @@
+---
+import { Typography } from "../react/Typography";
+import type { Variant } from "../react/Typography";
+
+interface Props {
+	label: string;
+	labelTextVariant: Variant;
+	labelText: string;
+	name: string;
+}
+
+const { label, labelTextVariant, labelText, name } = Astro.props;
+---
+
+<div class="flex w-full flex-col gap-y-3">
+	<label for={label}
+		><Typography variant={labelTextVariant} className="text-white"
+			>{labelText}</Typography
+		></label
+	>
+	<input
+		type="text"
+		name={name}
+		id={label}
+		class="bg-darkGray rounded-xl p-6 text-white font-bold hover:shadow-md hover:shadow-white transition-all duration-500 cursor-pointer focus:cursor-text outline-none focus:shadow-none focus:outline-purple-500"
+	/>
+</div>

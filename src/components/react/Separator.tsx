@@ -1,8 +1,8 @@
 import React from "react";
 
 interface Props {
-    width: string;
-    color: string;
+    width?: string;
+    color?: string;
     className?: string;
 }
 
