@@ -1,0 +1,25 @@
+---
+import Title from "../ui/Title.astro";
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+	bgImage?: string;
+	footerImage?: string;
+}
+
+const {
+	title = "остались вопросы?",
+	subtitle = "Заполните форму обратной свзяи и наш оператор свяжется с вами в течении пары часов",
+	bgImage = "/astronaut gradient.png",
+	footerImage = "/Moon footer.png",
+} = Astro.props;
+---
+
+<section class="w-screen h-screen bg-black relative">
+	<div class="flex justify-center items-end h-1/4">
+		<Title title={title} subtitle={subtitle} />
+	</div>
+
+	<img src={footerImage} alt="moon image" class="absolute bottom-0 w-full" />
+</section>
