@@ -12,8 +12,11 @@ export default {
 				pink: "#D6395D",
 				space: "#16151C",
 				slate: "#1E2432",
+				darkSlate: '#2C3747',
+				lightGray: '#A6B0BC'
 			},
 		},
 	},
+	important: true,
 	plugins: [],
 };

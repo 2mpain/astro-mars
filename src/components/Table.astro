@@ -1,5 +1,9 @@
+---
+import Stars from "./react/Stars";
+---
+
 <div class="flex justify-center">
-	<table id="hotel-table">
+	<table id="hotel-table" class="w-1/2">
 		<thead>
 			<tr>
 				<th></th>
@@ -9,23 +13,29 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td class="text-start">Тип отеля</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
+			<tr class="bg-darkSlate">
+				<td class="text-start font-regular text-xl">Тип отеля</td>
+				<td>
+					<Stars variant="purple" count={3} />
+				</td>
+				<td>
+					<Stars variant="purple" count={4} />
+				</td>
+				<td>
+					<Stars variant="purple" count={5} />
+				</td>
 			</tr>
 			<tr>
-				<td class="text-start">Питание</td>
-				<td>Завтрак</td>
-				<td>Завтрак, ужин</td>
-				<td>Ресторан открыт для вас в любое время</td>
+				<td class="text-start font-regular text-xl">Питание</td>
+				<td class="text-lightGray">Завтрак</td>
+				<td class="text-lightGray">Завтрак, ужин</td>
+				<td class="text-lightGray">Ресторан открыт для вас в любое время</td>
 			</tr>
-			<tr>
-				<td class="text-start">Услуги</td>
-				<td>WIFI</td>
-				<td>WIFI</td>
-				<td>WIFI + телевидение</td>
+			<tr class="bg-darkSlate">
+				<td class="text-start font-regular text-xl">Услуги</td>
+				<td class="text-lightGray">WIFI</td>
+				<td class="text-lightGray">WIFI</td>
+				<td class="text-lightGray">WIFI + телевидение</td>
 			</tr>
 		</tbody>
 	</table>
@@ -33,14 +43,15 @@
 
 <style>
 	#hotel-table {
-		width: 50%;
-		border-collapse: collapse;
+		border: 0px;
+		color: white;
 	}
 
 	#hotel-table th,
 	#hotel-table td {
-		padding: 8px;
 		text-align: center;
+		padding: 24px;
+		width: 24px;
 	}
 
 	#hotel-table th {
