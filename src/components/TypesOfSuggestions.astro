@@ -1,7 +1,7 @@
 ---
 import Title from "./Title.astro";
 import Table from "./Table.astro";
-import { HotelTable } from "./react/HotelTable";
+
 interface Props {
 	title?: string;
 	subtitle?: string;
@@ -10,8 +10,10 @@ interface Props {
 const { title = "три типа предложений", subtitle = "" } = Astro.props;
 ---
 
-<section class="w-screen min-h-screen">
-	<Title title={title} />
+<section class="w-screen h-screen">
+	<div class="flex justify-center items-end h-1/6">
+		<Title title={title} subtitle={subtitle} />
+	</div>
 
 	<div class="mt-24">
 		<Table />

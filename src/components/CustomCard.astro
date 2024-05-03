@@ -1,0 +1,30 @@
+---
+import { Typography } from "./react/Typography";
+import Stars from "./react/Stars";
+
+interface Props {
+	avatarSrc: string;
+	customerName: string;
+	feedback: string;
+	stars: number;
+}
+
+const { avatarSrc, customerName, feedback, stars } = Astro.props;
+---
+
+<div
+	class="w-2/3 bg-darkGray rounded-3xl mx-auto mt-20 bg-opacity-50 border-2 border-gray border-opacity-10 z-20"
+>
+	<div class="flex flex-col gap-y-4 justify-center items-center py-16">
+		<img src={avatarSrc} alt="customer avatar" class="w-52 h-52" />
+		<Typography variant="h2" className="text-white font-bold"
+			>{customerName}</Typography
+		>
+		<div class="w-4/5 flex flex-col gap-y-12 mt-8">
+			<Typography variant="h2" className="text-white text-center"
+				>{feedback}</Typography
+			>
+			<Stars variant="orange" count={stars} className="mx-2" />
+		</div>
+	</div>
+</div>
