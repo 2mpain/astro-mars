@@ -1,0 +1,28 @@
+---
+import Card from "./Card.astro";
+import CustomCard from "./CustomCard.astro";
+import Title from "./Title.astro";
+
+interface Props {
+	title?: string;
+}
+
+const { title = "отзывы наших клиентов" } = Astro.props;
+---
+
+<section class="w-screen min-h-screen">
+	<Title title={title} />
+
+	<img
+		class="z-10 absolute right-0 self-start"
+		src="/astronaut.png"
+		alt="astronaut image"
+	/>
+
+	<CustomCard
+		avatarSrc="./customer avatar.png"
+		customerName="Jenny Wilson"
+		feedback="Это было невероятно! Марс просто прекрасен. Я и моя семья получили эмоции которые точно останутся на всю жизнь. Особенно понравился Лабиринт ночи, главное не байти слишком глубоко  не потеряться))) Очень хочу поделиться со всеми фотографиями, сделанными во время путешествия"
+		stars={5}
+	/>
+</section>
