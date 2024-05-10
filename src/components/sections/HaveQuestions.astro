@@ -17,8 +17,8 @@ const {
 } = Astro.props;
 ---
 
-<section class="w-screen h-screen bg-black relative">
-	<div class="flex justify-center items-end h-1/4">
+<section class="w-screen min-h-screen bg-black relative py-16">
+	<div class="flex justify-center items-center h-1/2">
 		<Title title={title} subtitle={subtitle} />
 	</div>
 
@@ -27,7 +27,7 @@ const {
 		<img
 			src={bgImage}
 			alt="astronaut image"
-			class="absolute z-0 top-0 right-0 w-1/2 opacity-10"
+			class="absolute z-0 top-0 right-0 w-1/2 h-screen opacity-10"
 		/>
 	</div>
 
